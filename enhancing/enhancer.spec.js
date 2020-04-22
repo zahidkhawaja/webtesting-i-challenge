@@ -40,4 +40,19 @@ describe("Enhancing system test suite", () => {
 
         })
     })
+
+    describe("repair()", () => {
+        it("Set durability to 100", () => {
+
+            const item = {
+                name: "Test",
+                durability: 55,
+                enhancement: 15
+            }
+
+            const actual = repair(item);
+
+            expect(actual.durability).toBe(100);
+        })
+    })
 })
