@@ -39,6 +39,30 @@ describe("Enhancing system test suite", () => {
             expect(actual.durability).toBe(70);
 
         })
+
+        it("Subtract 10 from durability if enhancement is below 17 and above 15", () => {
+
+            const item = {
+                enhancement: 16,
+                durability: 75
+            }
+
+            const actual = fail(item);
+
+            expect(actual.durability).toBe(65);
+        })
+
+        it("Substract 1 from durability if enhancement is above 16", () => {
+
+            const item = {
+                enhancement: 18,
+                durability: 50
+            }
+
+            const actual = fail(item);
+
+            expect(actual.durability).toBe(49);
+        })
     })
 
     describe("repair()", () => {
