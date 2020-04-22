@@ -1,6 +1,7 @@
 const { succeed, fail, repair } = require('./enhancer.js');
 
-describe("Enhancing system", () => {
+describe("Enhancing system test suite", () => {
+
     describe("succeed()", () => {
         it("Add 1 to enhancement", () => {
 
@@ -22,6 +23,21 @@ describe("Enhancing system", () => {
             const actual = succeed(item);
 
             expect(actual.enhancement).toBe(20);
+        })
+    })
+
+    describe("fail()", () => {
+        it("Subtract 5 from durability if enhancement is below 15", () => {
+            
+            const item = {
+                enhancement: 14,
+                durability: 75
+            }
+
+            const actual = fail(item);
+
+            expect(actual.durability).toBe(70);
+
         })
     })
 })
